@@ -15,7 +15,7 @@
 
 
 
-<a href="{{ url('vehiculo/create') }}" class="btn btn-success" > Registrar Un Vehículo</a> <!--enlace a create -->
+<a href="{{ url('marca/create') }}" class="btn btn-success" > Registrar Una Marca</a> <!--enlace a create -->
 <br>
 <br>
 
@@ -24,51 +24,37 @@
     <thead class="thead-light">
         <tr>
             <th>#</th>
-            <th>Foto</th>
-            <th>Modelo</th>
-            <th>Año</th>
-            <th>Version</th>
-            <th>Cilindraje</th>
-            <th>Rendimiento</th>
+            <th>Nombre</th>
             <th>Acciones</th>
         </tr>
     </thead>
 
     <tbody>
 
-        @foreach ( $vehiculos as $vehiculo )
+        @foreach ( $marcas as $marca )
         <tr>
-            <td>{{ $vehiculo->id }}</td>
-
+            <td>{{ $marca->id }}</td>
+            <td>{{ $marca->Nombre }}</td>
             <td>
-               <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$vehiculo->Foto }}" width="100" alt="">
-            </td>
-
-            <td>{{ $vehiculo->Modelo }}</td>
-            <td>{{ $vehiculo->Anyio }}</td>
-            <td>{{ $vehiculo->Version }}</td>
-            <td>{{ $vehiculo->Cilindraje }}</td>
-            <td>{{ $vehiculo->Rendimiento }}</td>
-            <td>
-                <a href="{{ url('/vehiculo/'.$vehiculo->id.'/edit') }}" class="btn btn-warning"> <!-- redirige un link hacia el formulario editar con el id -->
+                <a href="{{ url('/marca/'.$marca->id.'/edit') }}" class="btn btn-warning"> <!-- redirige un link hacia el formulario editar con el id -->
                     Editar 
                 </a>
                 
                 | 
                 
-                <form action="{{ url('/vehiculo/'.$vehiculo->id) }}" method="post" class="d-inline"> <!-- adjunta la id en la url -->
+                <form action="{{ url('/marca/'.$marca->id) }}" method="post" class="d-inline"> <!-- adjunta la id en la url -->
                  @csrf
                  {{ method_field('DELETE') }}  <!-- modifica el post por el delete -->
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Deseas borrar?')" value="Borrar">
                 </form>
-                    
+        
             </td>
         </tr>
         @endforeach
     </tbody>
 
 </table>
-{!! $vehiculos->links() !!} <!-- pagina los resultados de la tabla -->
+{!! $marcas->links() !!} <!-- pagina los resultados de la tabla -->
 </div>
 
 @endsection

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehiculoController;
+use App\Http\Controllers\MarcaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/vehiculo/create', [VehiculoController::class, 'create']);
 */
 
 Route::resource('vehiculo', VehiculoController::class)->middleware('auth'); //genera acceso a las vistas desde el controlador y sus metodos, se debe cumplir con auth antes
+Route::resource('marca', MarcaController::class)->middleware('auth'); //genera acceso a las vistas desde el controlador y sus metodos, se debe cumplir con auth antes
 
 Auth::routes(['register'=>false, 'reset'=>false]); //deshabilito opcion de registro y recovery de pass
 

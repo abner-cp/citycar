@@ -19,12 +19,6 @@
         <input type="text" class="form-control" name="Modelo" value="{{ isset($vehiculo->Modelo)?$vehiculo->Modelo:old('Modelo') }}" id="Modelo">
         </div>
 
-        
-        <div class="form-group">
-        <label for="Marca"> Marca</label>
-        <input type="text" class="form-control" name="Marca" value="{{ isset($vehiculo->Marca)?$vehiculo->Marca:old('Marca') }}" id="Marca">
-        </div>
-
         <div class="form-group">
         <label for="Anyio"> Año</label>
         <input type="number" class="form-control" name="Anyio" value="{{ isset($vehiculo->Anyio)?$vehiculo->Anyio:old('Anyio') }}" id="Anyio">

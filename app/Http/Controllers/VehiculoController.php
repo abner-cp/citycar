@@ -44,7 +44,7 @@ class VehiculoController extends Controller
         //arreglo donde se intenta validar que vengan los datos desde el form
         $campos=[
             'Modelo'=>'required|string|max:50',
-            'Marca'=>'required|string|max:50',
+           // 'Marca'=>'required|string|max:50',
             'Anyio'=>'required|integer|max:5000',
             'Version'=>'required|string|max:50',
             'Cilindraje'=>'required|integer|max:10000',
@@ -108,7 +108,7 @@ class VehiculoController extends Controller
         //arreglo donde se intenta validar que vengan los datos desde el form
         $campos=[
             'Modelo'=>'required|string|max:50',
-            'Marca'=>'required|string|max:50',
+           // 'Marca'=>'required|string|max:50',
             'Anyio'=>'required|integer|max:5000',
             'Version'=>'required|string|max:50',
             'Cilindraje'=>'required|integer|max:10000',

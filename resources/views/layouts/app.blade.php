@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('vehiculo.index') }}">{{ __('Vehiculos') }}</a>   <!-- linkeado hacia index -->
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('marca.index') }}">{{ __('Marcas') }}</a>   <!-- linkeado hacia index -->
+                        </li>
 
                     </ul>
 
