@@ -20,6 +20,12 @@
         </div>
 
         <div class="form-group">
+          {{ Form::label('Marcas') }}
+          {{ Form::select('marca_id', $marcas, $vehiculo->marca_id, ['class' => 'form-control' . ($errors->has('marca_id') ? ' is-invalid' : '')]) }}
+          {!! $errors->first('marca_id', '<div class="invalid-feedback">:message</p>') !!}
+      </div>
+
+        <div class="form-group">
         <label for="Anyio"> Año</label>
         <input type="number" class="form-control" name="Anyio" value="{{ isset($vehiculo->Anyio)?$vehiculo->Anyio:old('Anyio') }}" id="Anyio">
         </div>

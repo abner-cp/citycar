@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Vehiculo extends Model
 {
     use HasFactory;
+    public function marca () {
+
+        return $this->belongsTo('App\Models\Marca', 'marca_id');
+    }
+
 }

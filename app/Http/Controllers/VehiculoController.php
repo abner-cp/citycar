@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehiculo;
+use App\Models\Marca;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,7 +29,9 @@ class VehiculoController extends Controller
     public function create()
     {
         //
-        return view('vehiculo/create');
+        $vehiculo= new Vehiculo();
+        $marcas= Marca::pluck('Nombre','id'); //ver como enviarlo al edit formulario
+        return view('vehiculo/create', compact('vehiculo', 'marcas'));
     }
 
     /**
@@ -91,8 +94,9 @@ class VehiculoController extends Controller
     public function edit($id) //cambie el argumento-objeto por el ID
     {
         //
+        $marcas= Marca::pluck('Nombre','id'); //ver como enviarlo al edit formulario
         $vehiculo= Vehiculo::findOrFail($id);  //busco por id
-        return view('vehiculo.edit', compact('vehiculo') );  //retornamos a la vista con los datos del vehiculo
+        return view('vehiculo.edit', compact('vehiculo', 'marcas') );  //retornamos a la vista con los datos del vehiculo
     }
 
     /**
@@ -142,7 +146,6 @@ class VehiculoController extends Controller
         $vehiculo= Vehiculo::findOrFail($id);  //busco por id
         //return view('vehiculo.edit', compact('vehiculo') );  //retornamos a la vista con los datos del vehiculo
         return redirect('vehiculo')->with('mensaje', 'Vehículo modificado exitosamente!'); //redirige a index y agrega un msj de exito
-
 
     }
 

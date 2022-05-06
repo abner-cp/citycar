@@ -26,6 +26,7 @@
             <th>#</th>
             <th>Foto</th>
             <th>Modelo</th>
+            <th>Marca</th>
             <th>Año</th>
             <th>Version</th>
             <th>Cilindraje</th>
@@ -45,6 +46,7 @@
             </td>
 
             <td>{{ $vehiculo->Modelo }}</td>
+            <td>{{ $vehiculo->marca->Nombre }}</td>
             <td>{{ $vehiculo->Anyio }}</td>
             <td>{{ $vehiculo->Version }}</td>
             <td>{{ $vehiculo->Cilindraje }}</td>
