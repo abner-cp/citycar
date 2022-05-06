@@ -10,7 +10,7 @@ class Vehiculo extends Model
     use HasFactory;
     public function marca () {
 
-        return $this->belongsTo('App\Models\Marca', 'marca_id');
+        return $this->belongsTo('App\Models\Marca', 'marca_id'); //se debe referenciar a la otra tabla externa y al campo local
     }
 
 }
